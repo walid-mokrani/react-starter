@@ -25,6 +25,7 @@
     "autoprefixer": "^8.5.0",
     "babel-eslint": "^8.2.3",
     "babel-loader": "^8.0.0-beta.3",
+    "chokidar": "^2.0.3",
     "css-loader": "^0.28.11",
     "dotenv": "^5.0.1",
     "dotenv-expand": "^4.2.0",
@@ -95,6 +96,7 @@
     "flow": "flow",
     "flow:check": "flow check",
     "clean": "babel-node tools/run clean",
+    "copy": "babel-node tools/run copy",
     "bundle": "babel-node tools/run bundle"
   }
 }
