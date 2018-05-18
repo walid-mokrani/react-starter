@@ -22,15 +22,36 @@
     "eslint-plugin-react": "^7.8.2",
     "flow-bin": "^0.72.0",
     "husky": "^0.14.3",
+    "lint-staged": "^7.1.0",
     "prettier": "^1.12.1",
     "stylelint": "^9.2.1",
     "stylelint-config-standard": "^18.2.0",
     "stylelint-order": "^0.8.1"
   },
+  "lint-staged": {
+    "ignore": [
+      "package.json"
+    ],
+    "linters": {
+      "*.{js,jsx}": [
+        "eslint --no-ignore --fix",
+        "git add --force"
+      ],
+      "*.{json,md,graphql}": [
+        "prettier --write",
+        "git add --force"
+      ],
+      "*.css": [
+        "stylelint --fix",
+        "git add --force"
+      ]
+    }
+  },
   "scripts": {
     "commitmsg": "commitlint -e $GIT_PARAMS",
+    "precommit": "lint-staged",
     "lint-js": "eslint --ignore-path .gitignore --ignore-pattern \"!**/.*\" .",
-    "lint-css": "stylelint \"src/**/*.{css,less,styl,scss,sass,sss}\"",
+    "lint-css": "stylelint \"src/**/*.css\"",
     "lint": "yarn run lint-js && yarn run lint-css",
     "fix-js": "yarn run lint-js --fix",
     "fix-css": "yarn run lint-css --fix",
