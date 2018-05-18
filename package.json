@@ -40,15 +40,18 @@
     "eslint-plugin-react": "^7.8.2",
     "file-loader": "^1.1.11",
     "flow-bin": "^0.72.0",
+    "glob": "^7.1.2",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^0.14.3",
     "lint-staged": "^7.1.0",
     "mini-css-extract-plugin": "^0.4.0",
+    "mkdirp": "^0.5.1",
     "optimize-css-assets-webpack-plugin": "^4.0.1",
     "postcss": "^6.0.22",
     "postcss-flexbugs-fixes": "^3.3.1",
     "postcss-loader": "^2.1.5",
     "prettier": "^1.12.1",
+    "rimraf": "^2.6.2",
     "style-loader": "^0.21.0",
     "stylelint": "^9.2.1",
     "stylelint-config-standard": "^18.2.0",
@@ -91,6 +94,7 @@
     "fix": "yarn run fix-js && yarn run fix-css",
     "flow": "flow",
     "flow:check": "flow check",
+    "clean": "babel-node tools/run clean",
     "bundle": "babel-node tools/run bundle"
   }
 }
