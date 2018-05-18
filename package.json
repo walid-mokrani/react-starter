@@ -17,6 +17,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.8.2",
+    "flow-bin": "^0.72.0",
     "husky": "^0.14.3",
     "prettier": "^1.12.1",
     "stylelint": "^9.2.1",
@@ -27,9 +28,11 @@
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "lint-js": "eslint --ignore-path .gitignore --ignore-pattern \"!**/.*\" .",
     "lint-css": "stylelint \"src/**/*.{css,less,styl,scss,sass,sss}\"",
-    "lint": "yarn run lint-js && yarn run lint-css",   
+    "lint": "yarn run lint-js && yarn run lint-css",
     "fix-js": "yarn run lint-js --fix",
     "fix-css": "yarn run lint-css --fix",
-    "fix": "yarn run fix-js && yarn run fix-css"
+    "fix": "yarn run fix-js && yarn run fix-css",
+    "flow": "flow",
+    "flow:check": "flow check"
   }
 }
