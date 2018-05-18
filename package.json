@@ -18,11 +18,18 @@
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.8.2",
     "husky": "^0.14.3",
-    "prettier": "^1.12.1"
+    "prettier": "^1.12.1",
+    "stylelint": "^9.2.1",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-order": "^0.8.1"
   },
   "scripts": {
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "lint-js": "eslint --ignore-path .gitignore --ignore-pattern \"!**/.*\" .",
-    "fix-js": "yarn run lint-js --fix"
+    "lint-css": "stylelint \"src/**/*.{css,less,styl,scss,sass,sss}\"",
+    "lint": "yarn run lint-js && yarn run lint-css",   
+    "fix-js": "yarn run lint-js --fix",
+    "fix-css": "yarn run lint-css --fix",
+    "fix": "yarn run fix-js && yarn run fix-css"
   }
 }
