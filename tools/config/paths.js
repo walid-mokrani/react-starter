@@ -47,6 +47,8 @@ module.exports = {
   appSrc: resolveApp('src'),
   testsSetup: resolveApp('src/setupTests.js'),
   tools: resolveApp('tools'),
+  yarnLockFile: resolveApp('yarn.lock'),
+  licenseFile: resolveApp('LICENSE.txt'),
   appNodeModules: resolveApp('node_modules'),
   publicUrl: getPublicUrl(resolveApp('package.json')),
   servedPath: getServedPath(resolveApp('package.json')),

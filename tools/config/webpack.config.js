@@ -31,8 +31,8 @@ const reImage = /\.(bmp|gif|jpg|jpeg|png|svg)$/
 
 // set static asset name as we reference these options multiple times
 const staticAssetName = isDebug
-  ? '[path][name].[ext]?[hash:8]'
-  : '[hash:8].[ext]'
+  ? 'static/media/[path][name].[ext]?[hash:8]'
+  : 'static/media/[hash:8].[ext]'
 
 // set shared css options as we reference these options multiple times
 const commonCssOptions = {
@@ -138,10 +138,12 @@ const config = {
     path: paths.appBuild,
     publicPath,
     pathinfo: isVerbose,
-    filename: isDebug ? '[name].js' : '[name].[chunkhash:8].js',
+    filename: isDebug
+      ? 'static/js/[name].js'
+      : 'static/js/[name].[chunkhash:8].js',
     chunkFilename: isDebug
-      ? '[name].chunk.js'
-      : '[name].[chunkhash:8].chunk.js',
+      ? 'static/js/[name].chunk.js'
+      : 'static/js/[name].[chunkhash:8].chunk.js',
     // point sourcemap entries to original disk location (format as URL on Windows)
     devtoolModuleFilenameTemplate: info =>
       path.resolve(info.absoluteResourcePath).replace(/\\/g, '/'),
@@ -182,8 +184,8 @@ const config = {
               // CSS Loader https://github.com/webpack/css-loader
               importLoaders: 1,
               localIdentName: isDebug
-                ? '[name]-[local]-[hash:base64:5]'
-                : '[hash:base64:5]',
+                ? 'static/css/[name]-[local]-[hash:base64:5]'
+                : 'static/css/[hash:base64:5]',
               ...commonCssOptions,
             },
           },
@@ -253,10 +255,12 @@ const config = {
     new MiniCssExtractPlugin({
       // options similar to the same options in webpackOptions.output
       // both options are optional
-      filename: isDebug ? '[name].css' : '[name].[chunkhash:8].css',
+      filename: isDebug
+        ? 'static/css/[name].css'
+        : 'static/css/[name].[chunkhash:8].css',
       chunkFilename: isDebug
-        ? '[name].chunk.css'
-        : '[name].[chunkhash:8].chunk.css',
+        ? 'static/css/[name].chunk.css'
+        : 'static/css/[name].[chunkhash:8].chunk.css',
     }),
 
     // generates an `index.html` file with the <script> injected.
