@@ -1,6 +1,5 @@
 import pkg from '../../package.json'
-
-const isDebug = !process.argv.includes('--release')
+import { isDebug } from './env'
 
 // Babel configuration
 // https://babeljs.io/docs/usage/api/

@@ -294,10 +294,6 @@ const config = {
     // if (process.env.NODE_ENV === 'production') { ... }. See `./env.js`.
     new webpack.DefinePlugin(env.stringified),
 
-    // Webpack Bundle Analyzer
-    // https://github.com/th0r/webpack-bundle-analyzer
-    ...(isAnalyze ? [new BundleAnalyzerPlugin()] : []),
-
     // production only plugins
     ...(isDebug
       ? []
@@ -340,6 +336,10 @@ const config = {
             staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
           }),
         ]),
+
+    // Webpack Bundle Analyzer
+    // https://github.com/th0r/webpack-bundle-analyzer
+    ...(isAnalyze ? [new BundleAnalyzerPlugin()] : []),
   ],
 }
 

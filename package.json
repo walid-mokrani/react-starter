@@ -25,6 +25,7 @@
     "autoprefixer": "^8.5.0",
     "babel-eslint": "^8.2.3",
     "babel-loader": "^8.0.0-beta.3",
+    "browser-sync": "^2.24.4",
     "chokidar": "^2.0.3",
     "css-loader": "^0.28.11",
     "dotenv": "^5.0.1",
@@ -39,8 +40,10 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.8.2",
+    "express": "^4.16.3",
     "file-loader": "^1.1.11",
     "flow-bin": "^0.72.0",
+    "get-port": "^3.2.0",
     "glob": "^7.1.2",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^0.14.3",
@@ -99,6 +102,7 @@
     "copy": "babel-node tools/run copy",
     "bundle": "babel-node tools/run bundle",
     "build": "babel-node tools/run build",
-    "build-stats": "yarn run build --release --analyse"
+    "build-stats": "yarn run build --release --analyse",
+    "serve": "babel-node tools/run runServer"
   }
 }
