@@ -7,6 +7,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 import ManifestPlugin from 'webpack-manifest-plugin'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 import SWPrecacheWebpackPlugin from 'sw-precache-webpack-plugin'
+import WatchMissingNodeModulesPlugin from 'react-dev-utils/WatchMissingNodeModulesPlugin'
 import paths from './paths'
 import babelConfig from './babel.config'
 import getClientEnvironment, { isDebug, isVerbose, isAnalyze } from './env'
@@ -294,10 +295,19 @@ const config = {
     // if (process.env.NODE_ENV === 'production') { ... }. See `./env.js`.
     new webpack.DefinePlugin(env.stringified),
 
-    // production only plugins
     ...(isDebug
-      ? []
+      ? [
+          // developement only plugins
+
+          // If you require a missing module and then `npm install` it, you still have
+          // to restart the development server for Webpack to discover it. This plugin
+          // makes the discovery automatic so you don't have to restart.
+          // See https://github.com/facebook/create-react-app/issues/186
+          new WatchMissingNodeModulesPlugin(paths.appNodeModules),
+        ]
       : [
+          // production only plugins
+
           // generate a manifest file which contains a mapping of all asset filenames
           // to their corresponding output file so that tools can pick it up without
           // having to parse `index.html`.
