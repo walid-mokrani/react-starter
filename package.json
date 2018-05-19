@@ -16,6 +16,8 @@
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.47",
     "@babel/node": "^7.0.0-beta.47",
+    "@babel/plugin-transform-react-constant-elements": "^7.0.0-beta.47",
+    "@babel/plugin-transform-react-inline-elements": "^7.0.0-beta.47",
     "@babel/preset-env": "^7.0.0-beta.47",
     "@babel/preset-flow": "^7.0.0-beta.47",
     "@babel/preset-react": "^7.0.0-beta.47",
@@ -27,6 +29,7 @@
     "babel-eslint": "^8.2.3",
     "babel-jest": "^22.4.4",
     "babel-loader": "^8.0.0-beta.3",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.13",
     "browser-sync": "^2.24.4",
     "chokidar": "^2.0.3",
     "css-loader": "^0.28.11",
