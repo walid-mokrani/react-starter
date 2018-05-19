@@ -9,6 +9,7 @@ export const isDebug = !process.argv.includes('--release')
 export const isVerbose = process.argv.includes('--verbose')
 export const isAnalyze = process.argv.includes('--analyse')
 export const isSilent = process.argv.includes('--silent')
+export const isWatching = process.argv.includes('--watch')
 export const shouldBuild = !process.argv.includes('--no-build')
 
 const NODE_ENV = process.env.NODE_ENV || isDebug ? 'development' : 'production'

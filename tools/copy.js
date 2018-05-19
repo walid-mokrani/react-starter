@@ -4,6 +4,7 @@ import { writeFile, copyFile, makeDir, copyDir, cleanDir } from './lib/fs'
 import pkg from '../package.json'
 import { format } from './run'
 import paths from './config/paths'
+import { isWatching } from './config/env'
 
 /**
  * Copies static files such as robots.txt, favicon.ico to the
@@ -30,7 +31,7 @@ async function copy() {
     copyDir(paths.appPublic, paths.appBuild, { ignore: `index.html` }),
   ])
 
-  if (process.argv.includes('--watch')) {
+  if (isWatching) {
     const watcher = chokidar.watch([`${paths.appPublic}/**/*`], {
       ignoreInitial: true,
     })
