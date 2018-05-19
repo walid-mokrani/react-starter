@@ -25,7 +25,7 @@ const publicUrl = publicPath.slice(0, -1)
 const env = getClientEnvironment(publicUrl)
 
 // files regexes
-const reScript = /\.(js|jsx|mjs)$/
+const reScript = /\.js$/
 const reStyle = /\.css$/
 const reImage = /\.(bmp|gif|jpg|jpeg|png|svg)$/
 

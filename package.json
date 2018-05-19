@@ -87,11 +87,11 @@
       "package.json"
     ],
     "linters": {
-      "*.{js,jsx}": [
+      "*.js": [
         "eslint --no-ignore --fix",
         "git add --force"
       ],
-      "*.{json,md,graphql}": [
+      "*.json": [
         "prettier --write",
         "git add --force"
       ],
