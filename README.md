@@ -148,5 +148,4 @@ For more commands, please see the scripts in [package.json](package.json) file.
 ### .env files
 
 It enables you to create custom Node environment variables that are embedded during the build time.<br>
-By default the files are loaded from the  `/dotenv` folder.<br>
 Please refer to [Adding Custom Environment Variables](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-custom-environment-variables) for more info.
