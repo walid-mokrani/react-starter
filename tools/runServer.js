@@ -1,7 +1,7 @@
 import express from 'express'
+import history from 'connect-history-api-fallback'
 import run, { format } from './run'
 import build from './build'
-import paths from './config/paths'
 import listen from './lib/listen'
 import { shouldBuild } from './config/env'
 
@@ -13,10 +13,7 @@ let server
 async function runServer() {
   if (server) return server
   server = express()
-  server.use(express.static(paths.appBuild))
-  server.get('*', (req, res) => {
-    res.sendFile(paths.appBuild)
-  })
+  server.use(history())
 
   if (shouldBuild) await run(build)
 

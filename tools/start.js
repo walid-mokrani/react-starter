@@ -1,5 +1,6 @@
 import express from 'express'
 import webpack from 'webpack'
+import history from 'connect-history-api-fallback'
 import webpackDevMiddleware from 'webpack-dev-middleware'
 import webpackHotMiddleware from 'webpack-hot-middleware'
 import errorOverlayMiddleware from 'react-dev-utils/errorOverlayMiddleware'
@@ -50,6 +51,7 @@ async function start() {
   if (server) return server
   server = express()
   server.use(errorOverlayMiddleware())
+  server.use(history())
 
   // Configure client-side hot module replacement
   webpackConfig.entry = ['./tools/lib/webpackHotDevClient']
