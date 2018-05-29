@@ -104,16 +104,18 @@ const config = {
   },
 
   optimization: {
-    // move modules that occur in multiple entry chunks to a new entry chunk (the commons chunk).
+    // Automatically split vendor and commons
+    // https://twitter.com/wSokra/status/969633336732905474
+    // https://medium.com/webpack/webpack-4-code-splitting-chunk-graph-and-the-splitchunks-optimization-be739a861366
     splitChunks: {
-      cacheGroups: {
-        commons: {
-          chunks: 'initial',
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendors',
-        },
-      },
+      chunks: 'all',
+      name: 'vendors',
     },
+
+    // Keep the runtime chunk seperated to enable long term caching
+    // https://twitter.com/wSokra/status/969679223278505985
+    runtimeChunk: true,
+
     // minimize js and css
     minimizer: [
       new UglifyJsPlugin({
