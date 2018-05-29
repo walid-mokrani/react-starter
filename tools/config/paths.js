@@ -12,13 +12,12 @@ const getPublicUrl = appPackageJson =>
   // eslint-disable-next-line global-require,import/no-dynamic-require
   envPublicUrl || require(appPackageJson).homepage
 
-// eslint-disable-next-line no-shadow
-function ensureSlash(path, needsSlash) {
-  const hasSlash = path.endsWith('/')
+function ensureSlash(inputPath, needsSlash) {
+  const hasSlash = inputPath.endsWith('/')
   if (hasSlash && !needsSlash) {
-    return path.substr(0, path.length - 1)
+    return inputPath.substr(0, inputPath.length - 1)
   } else if (!hasSlash && needsSlash) {
-    return `${path}/`
+    return `${inputPath}/`
   }
   return path
 }
