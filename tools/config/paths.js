@@ -19,7 +19,7 @@ function ensureSlash(inputPath, needsSlash) {
   } else if (!hasSlash && needsSlash) {
     return `${inputPath}/`
   }
-  return path
+  return inputPath
 }
 
 // We use `PUBLIC_URL` environment variable or "homepage" field to infer
